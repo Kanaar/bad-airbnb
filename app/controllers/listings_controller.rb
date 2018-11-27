@@ -2,10 +2,20 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @listings = Listing.all
+    if params[:commit] == 'Search'
+      @listings = Listing.where(country: params[:search][:country], city: params[:search][:city])
+      @header = "all listings in #{params[:search][:city]}, #{params[:search][:country]}"
+    elsif params[:commit] == 'Show all listings'
+      @listings = Listing.all
+      @header = "All listings"
+    else
+      @listings = Listing.first(3)
+      @header = "First 3 listings"
+    end
   end
 
-  def show
+  def search
+    @listings = Listing.all
   end
 
   def new

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :listings, only: [:show, :edit, :update, :destroy] do
+  resources :listings, only: [:show, :index, :edit, :update, :destroy] do
     resources :bookings, only: [:index, :new, :create]
   end
   resources :bookings, only: [:show, :edit, :update, :destroy]
