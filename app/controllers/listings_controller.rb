@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-   def index
+  def index
     @listings = Listings.all
   end
 
@@ -15,7 +15,6 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     @listing.save!
   end
-
 
 private
 
