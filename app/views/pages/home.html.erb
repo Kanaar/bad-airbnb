@@ -1,2 +1,21 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row">
+    <h1>Pages#home</h1>
+    <p>Find me in app/views/pages/home.html.erb</p>
+  </div>
+
+  <div class="row">
+  <div class="col-xs-12 col-sm-4 col-md-4">
+    <%= simple_form_for :listing, url: listings_path, :method => :get do |f| %>
+      <%= f.error_notification %>
+  
+      <%= f.input :city %>
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date, as: :date, html5: true %>
+  
+      <%= f.button :button, "Search", class: "btn-primary" %>
+    <% end %>
+  </div>
+  </div>
+
+</div>
