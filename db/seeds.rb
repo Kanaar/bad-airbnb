@@ -15,25 +15,25 @@ Profile.new(:first_name => 'John', :last_name => 'Doe', :user => user_one).save!
 Profile.new(:first_name => 'Jane', :last_name => 'Doe', :user => user_two).save!
 
 # Create listings
-listing_one = Listing.new(:description => 'A very bad place', :address => '123 Sesame Street', :price_daily => 3.50 , :country => 'USA', :city => 'Compton', :capacity => 3, :user => user_one)
+listing_one = Listing.new(:headline => 'A very bad place', :description => "wet and cold in the wind of the cities waste dump winds", :address => '123 Sesame Street', :price_daily => 3.50 , :country => 'US', :city => 'Compton', :capacity => 3, :user => user_one)
 listing_one.save!
 
-listing_two = Listing.new(:description => 'A very fun place', :address => '123 Sesame Street', :price_daily => 13.50 , :country => 'USA', :city => 'Compton', :capacity => 3, :user => user_two)
+listing_two = Listing.new(:headline => 'A very fun place', :description => "wet and cold in the wind of the cities waste dump winds", :address => '123 Sesame Street', :price_daily => 13.50 , :country => 'BR', :city => 'Rio de Janeiro', :capacity => 3, :user => user_two)
 listing_two.save!
 
-listing_three = Listing.new(:description => 'A very exciting place', :address => '123 Sesame Street', :price_daily => 113.50 , :country => 'USA', :city => 'Compton', :capacity => 3, :user => user_one)
+listing_three = Listing.new(:headline => 'A very exciting place', :description => "wet and cold in the wind of the cities waste dump winds", :address => '123 Sesame Street', :price_daily => 113.50 , :country => 'BR', :city => 'Sao Paolo', :capacity => 3, :user => user_one)
 listing_three.save!
 
-listing_four = Listing.new(:description => 'A very happy place', :address => '123 Sesame Street', :price_daily => 93.50 , :country => 'USA', :city => 'Compton', :capacity => 3, :user => user_two)
+listing_four = Listing.new(:headline => 'A very happy place', :description => "wet and cold in the wind of the cities waste dump winds", :address => '123 Sesame Street', :price_daily => 93.50 , :country => 'NL', :city => 'Amsterdam', :capacity => 3, :user => user_two)
 listing_four.save!
 
-listing_five = Listing.new(:description => 'A very interesting place', :address => '123 Sesame Street', :price_daily => 883.50 , :country => 'USA', :city => 'Compton', :capacity => 3, :user => user_one)
+listing_five = Listing.new(:headline => 'A very interesting place', :description => "wet and cold in the wind of the cities waste dump winds", :address => '123 Sesame Street', :price_daily => 883.50 , :country => 'US', :city => 'Chicago', :capacity => 3, :user => user_one)
 listing_five.save!
 
-listing_six = Listing.new(:description => 'A very eventful place', :address => '123 Sesame Street', :price_daily => 39.50 , :country => 'USA', :city => 'Compton', :capacity => 3, :user => user_one)
+listing_six = Listing.new(:headline => 'A very eventful place', :description => "wet and cold in the wind of the cities waste dump winds", :address => '123 Sesame Street', :price_daily => 39.50 , :country => 'DE', :city => 'Hamburg', :capacity => 3, :user => user_one)
 listing_six.save!
 
-listing_seven = Listing.new(:description => 'A very good place', :address => '123 Sesame Street', :price_daily => 0.50 , :country => 'USA', :city => 'Compton', :capacity => 3, :user => user_one)
+listing_seven = Listing.new(:headline => 'A very good place', :description => "wet and cold in the wind of the cities waste dump winds", :address => '123 Sesame Street', :price_daily => 0.50 , :country => 'DE', :city => 'Frankfurt', :capacity => 3, :user => user_one)
 listing_seven.save!
 
 #  Create bookings

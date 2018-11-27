@@ -1,0 +1,8 @@
+<div class="form-container">
+   <%= simple_form_for :search,  url: listings_path, :method => :get do |f| %>
+       <%= f.input :country %>
+       <%= f.input :city %>
+       <%= f.submit "Search" %>
+       <%= f.submit "Show all listings" %>
+   <% end %>
+
