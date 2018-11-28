@@ -1,3 +1,18 @@
+<% if user_signed_in? %>
+  <div class="container">
+    <%= link_to "Create new listing", new_user_listing_path, class: "btn" %>
+    <h2>Your listings</h2>
+    <div class="cards-container">
+      <% @user.listings.each do |listing| %>
+      <%= render partial: 'shared/listing_card', locals: { listing: listing } %>
+      <% end %>
+    </div>
+  </div>
+  <% else %>
+    <!-- existing code -->
+<% end %>
+
+
 <div class="banner search-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
   <div class="banner-content">
     <h1>The world is yours!</h1>
