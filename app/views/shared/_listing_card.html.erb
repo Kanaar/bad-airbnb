@@ -7,7 +7,7 @@
       <p><%= listing.description %></p>
       </div>
       <%= image_tag "justin_holt.jpg", class: "card-user avatar avatar-large" %>
-      <a class="card-link" href="#" ></a>
+      <%= link_to listing_path(listing), :class => "card-link" do %><div></div><% end %>
     </div>
     <div class="card-footer">
       <p>$<%= listing.price_daily %></p>

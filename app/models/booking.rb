@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :listing
   belongs_to :user
 
-  validate :end_after_start
+  # validate :end_after_start
   validates :start_date, :end_date, :total_cost, presence: true
   validates :guest_number, presence: true, numericality: { greater_than: 0 }
 
