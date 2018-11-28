@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="listing-detail">
+    
+      <h2><%= @listing.description %></h2>
+      
+    <div>
+      <p>Address: <%= @listing.address %></p>
+      <p>Daily price: <%= "$#{sprintf('%.2f', @listing.price_daily)}" %></p>
+      <p>City: <%= @listing.city %></p>
+      <p>Capacity: <%= @listing.capacity %></p>
+      <p>Host: <%= Profile.find_by(id: @listing.user_id).first_name %></p>
+    </div>
+
+  </div>
+</div>
+
+  <% if user_signed_in? %>
+    
+  <% else %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary" %>
+  <% end %>
