@@ -1,28 +1,40 @@
+<div class="grey-box vertical-center">
 <div class="container">
 
   <% if user_signed_in? %>
   <div class="container">
-    <div class="form-group row">
-      <div class="col-xs-6 col-xs-offset-3">
-        <div class="search-box">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="listing-form">
           <h2>List your place!</h2>
           <%= simple_form_for :listing, url: new_listing_path, :method => :patch do |f| %>
             <%= f.error_notification %>
-            <div class="form-inline">
-              <%= f.input :country%>
-              <%= f.input :city%>
+
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :country%>
+            </div>
+            <div class="col-xs-12 col-md-6">
+            <%= f.input :price_daily, placeholder: "price per day in USD" %>
+            </div>
+            <div class="col-xs-12 col-md-6">
+            <%= f.input :city%>
+          </div>
+            <div class="col-xs-12 col-md-6">
+            <%= f.input :capacity, placeholder: "how many guest can stay" %>
             </div>
             <%= f.input :address %>
-            <%= f.input :price_daily, placeholder: "price per day in USD" %>
-            <%= f.input :capacity, placeholder: "how many guest can stay" %>
+
+
             <%= f.input :headline, placeholder: "now give us a catchy headline" %>
-            <%= f.input :description, placeholder: "and a detailed description of the place" %>
-            <%= f.submit :submit, class: "btn-primary search-box__button" %>
+
+            <%= f.input :description,  as: :text, placeholder: "and a detailed description of the place", :input_html => { :rows => 5 } %>
+         <%= f.submit :submit, class: "btn-primary btn-lg listing-form__button" %>
           <% end %>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <div class="container">
     <h2>Your listings</h2>
@@ -41,3 +53,4 @@
     <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary" %>
   <% end %>
 </div>
+

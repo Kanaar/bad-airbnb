@@ -1,0 +1,33 @@
+.search-box {
+  background-color: rgba($color: #181818, $alpha: 0.45);
+  padding: 2rem 8rem;
+  margin: 11rem 5rem 0 0;
+  border-radius: 1%;
+  color: white;
+
+  &__button {
+    margin-top: 3rem;
+  }
+}
+
+.listing-form {
+  background-color: rgba($color: #181818, $alpha: 0.45);
+  padding: 2rem 8rem;
+  margin: 11rem 5rem 0 0;
+  border-radius: 1%;
+  color: white;
+  width: 100vh;
+
+  &__button {
+    margin-top: 3rem;
+  }
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
