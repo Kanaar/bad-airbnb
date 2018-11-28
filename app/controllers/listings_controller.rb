@@ -18,6 +18,10 @@ class ListingsController < ApplicationController
     end
   end
 
+  def host_index
+    @listings = Listing.where(user: current_user)
+  end
+
   def search
     @listings = Listing.all
   end
