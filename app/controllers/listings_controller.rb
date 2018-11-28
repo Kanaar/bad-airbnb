@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   def index
     if params[:commit] == 'Search'
       @listings = Listing.where(country: params[:search][:country], city: params[:search][:city])
-      @header = "all listings in #{params[:search][:city]}, #{params[:search][:country]}"
+      @header = "All listings in #{params[:search][:city]}, #{params[:search][:country]}"
     elsif params[:commit] == 'Show all listings'
       @listings = Listing.all
       @header = "All listings"
