@@ -1,0 +1,29 @@
+<div class="container">
+
+  <% if user_signed_in? %>
+  <div class="container">
+    <h2>Create a listing</h2>
+    <div>
+      <p>listings form</p>
+      <p>lisitngs form</p>
+      <p>listings form</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Your listings</h2>
+    <div class="cards-container">
+      <div class="row">
+        <div class="notice"><%= notice %></div>
+        <div class="alert"><%= alert %></div>
+        <h2 class="header"><%= @header %></h2>
+        <% @listings.each do |listing| %>
+        <%= render partial: "shared/listing_card", locals: { listing: listing }%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% else %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary" %>
+  <% end %>
+</div>
