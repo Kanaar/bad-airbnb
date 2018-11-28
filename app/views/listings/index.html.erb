@@ -6,16 +6,18 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="cards-container">
-    <div class="row">
-      <div class="notice"><%= notice %></div>
-      <div class="alert"><%= alert %></div>
-      <h2 class="header"><%= @header %></h2>
-      <% @listings.each do |listing| %>
-      <%= render partial: "shared/listing_card", locals: { listing: listing }%>
-      <% end %>
+<div class="main-container">
+  <div class="container">
+    <div class="cards-container">
+      <div class="row">
+        <div class="notice"><%= notice %></div>
+        <div class="alert"><%= alert %></div>
+        <h2 class="header"><%= @header %></h2>
+        <% @listings.each do |listing| %>
+        <%= render partial: "shared/listing_card", locals: { listing: listing }%>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div id="map"></div>
+    <div id="map"></div>
 </div>
