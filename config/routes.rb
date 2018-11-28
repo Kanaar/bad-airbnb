@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'listings#index'
+  root to: 'listings#home'
 
   resources :users, only: [] do
     resources :listings, only: [:index, :new, :create]
