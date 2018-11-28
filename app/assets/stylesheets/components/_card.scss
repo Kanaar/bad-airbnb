@@ -81,3 +81,37 @@
   color: red;
   opacity: 0.3;
 }
+
+//// booking_card
+
+.booking-card {
+  background-image: none;
+  background: gray;
+  width: 1200px;
+  height: 300px;
+  padding: 16px;
+
+  h3 { text-decoration: underline; }
+
+  .card-description {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-footer {
+    background-color: gray;
+    display: block;
+  }
+}
+
+.bookings-host-details {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: inline-block;
+  text-align: center;
+
+  .card-user { position: static; }
+}
+
+.date-range { display: inline; }
