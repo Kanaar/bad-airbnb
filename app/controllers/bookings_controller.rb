@@ -1,3 +1,4 @@
+require 'byebug'
 class BookingsController < ApplicationController
   before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
 
@@ -14,10 +15,15 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.save
+    days = (@booking.end_date - @booking.start_date).to_i
+
+    @booking.listing = Listing.find(params[:id])
+    @booking.total_cost = days * @booking.listing.price_daily
+    @booking.user = current_user
+    @booking.save!
 
     if @booking.save
-      redirect_to user_bookings_path
+      redirect_to user_bookings_path(current_user)
     else
       render :new
     end
@@ -44,6 +50,6 @@ private
   end
 
   def booking_params
-    params.require(:listing).permit(:listing_id, :user_id, :start_date, :end_date, :guest_number )
+    params.require(:booking).permit(:user_id, :start_date, :end_date, :guest_number )
   end
 end

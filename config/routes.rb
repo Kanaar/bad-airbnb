@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   patch '/users/:user_id/user_listings', to: 'listings#create'
 
   get '/users/:user_id/bookings', to: 'bookings#index', as: 'user_bookings'
+  get '/users/:user_id/listing/:id', to: 'bookings#new', as: 'new_listing_booking'
+  post '/users/:user_id/listing/:id', to: 'bookings#create'
+
 
   resources :listings, only: [:show, :index, :edit, :update, :destroy] do
-    resources :bookings, only: [:index, :new, :create]
+    resources :bookings, only: [:index, :create]
   end
 end
 
