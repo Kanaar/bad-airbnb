@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+
+body {
+  background-image: image-url("hotel.jpg");
+}
+
+.search-box {
+  background-color: rgba($color: #181818, $alpha: 0.45);
+  padding: 2rem 8rem;
+  margin: 11rem 5rem 0 0;
+  border-radius: 1%;
+  color: white;
+
+  &__button {
+    margin-top: 3rem;
+  }
+}
