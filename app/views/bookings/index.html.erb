@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="container">
+    <h2>My Bookings</h2>
+    <% if user_signed_in? %>
+      <div class="cards-container">
+          <div class="row">
+            <div class="notice"><%= notice %></div>
+            <div class="alert"><%= alert %></div>
+            <h2 class="header"><%= @header %></h2>
+            <% @bookings.each do |booking| %>
+            <%= render partial: "shared/booking_card", locals: { booking: booking }%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary" %>
+  <% end %>
+</div>

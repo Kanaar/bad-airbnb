@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @bookings = bookings.all
+    @bookings = Booking.where(user: current_user)
   end
 
   def show
@@ -44,6 +44,6 @@ private
   end
 
   def booking_params
-    params.require(:listing).permit(:description, :country, :city, :address, :price_daily, :capacity)
+    params.require(:listing).permit(:listing_id, :user_id, :start_date, :end_date, :guest_number )
   end
 end
