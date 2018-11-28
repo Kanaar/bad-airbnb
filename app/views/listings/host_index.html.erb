@@ -2,14 +2,28 @@
 
   <% if user_signed_in? %>
   <div class="container">
-    <h2>Create a listing</h2>
-    <div>
-      <p>listings form</p>
-      <p>lisitngs form</p>
-      <p>listings form</p>
+    <div class="form-group row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <div class="search-box">
+          <h2>List your place!</h2>
+          <%= simple_form_for :listing, url: new_listing_path, :method => :patch do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inline">
+              <%= f.input :country%>
+              <%= f.input :city%>
+            </div>
+            <%= f.input :address %>
+            <%= f.input :price_daily, placeholder: "price per day in USD" %>
+            <%= f.input :capacity, placeholder: "how many guest can stay" %>
+            <%= f.input :headline, placeholder: "now give us a catchy headline" %>
+            <%= f.input :description, placeholder: "and a detailed description of the place" %>
+            <%= f.submit :submit, class: "btn-primary search-box__button" %>
+          <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
   <div class="container">
     <h2>Your listings</h2>
     <div class="cards-container">
