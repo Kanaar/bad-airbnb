@@ -1,0 +1,14 @@
+/* TODO: design your flexbox layout with a sticky map */
+
+/* We just give you a Gmaps with random width/height */
+.container {
+  display: flex;
+}
+
+#map {
+  flex: 0 0 450px;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  height: 100vh;
+  top: 0 !important;
+  left: 0px;
+}
