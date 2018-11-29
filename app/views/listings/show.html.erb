@@ -12,26 +12,29 @@
       </div>
     </div>
 
-    
-    <div class="col-lg-6">
-      <%# Hide booking if user is not logged in %>
-      <%# or user is listing's host             %>
-      <% if user_signed_in? %>
-        <% if current_user.id != @listing.user_id  %>
-            <div class="listing-book">
-                <%= simple_form_for :booking, url: listing_bookings_path(@listing), :method => :post do |f| %>
-                  <%= f.error_notification %>
-                  <div class="form-inline">
-                    <%= f.input :start_date, as: :date, html5: true, :input_html => { :value => params['start_date']} %>
-                    <%= f.input :end_date, as: :date, html5: true, :input_html => { :value => params['end_date']} %>
-                    <%= f.input :guest_number, as: :numeric %>
-                    <%= f.submit :book %>
-                  </div>
-                <% end %>
-            </div>
-        <% end %>
-      <% else %>
-        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary" %>
+    <%# Hide booking if user is not logged in %>
+    <%# or user is listing's host             %>
+    <% if user_signed_in? %>
+      <% if current_user.id != @listing.user_id  %>
+          <div class="listing-book">
+              <%= simple_form_for :booking, url: listing_bookings_path(@listing), :method => :post do |f| %>
+                <div class="form-inline">
+                  <%= f.input :start_date, as: :date, html5: true, :input_html => { :value => params['start_date']} %>
+                  <%= f.input :end_date, as: :date, html5: true, :input_html => { :value => params['end_date']} %>
+                  <%= f.input :guest_number, as: :numeric %>
+                  <%= f.submit :book %>
+                  <% if @booking.errors.any? %>
+                   <div class="errors-container">
+                     <ul>
+                       <% @booking.errors.full_messages.each do |message| %>
+                         <li><%= message %></li>
+                       <% end %>
+                     </ul>
+                   </div>
+                 <% end %>
+                </div>
+              <% end %>
+          </div>
       <% end %>
     </div>
   </div>
