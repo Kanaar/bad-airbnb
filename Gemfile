@@ -16,8 +16,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
-gem 'simple_form'
 gem 'country_select'
+gem 'jquery-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

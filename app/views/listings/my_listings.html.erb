@@ -1,0 +1,65 @@
+<div class="container">
+
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <div class="listing-form">
+          <h2>List your place!</h2>
+          <%= simple_form_for :listing, url: listings_path, :method => :post do |f| %>
+            <%= f.error_notification %>
+
+            <div class="col-xs-12 col-md-6">
+              <%= f.input :country%>
+            </div>
+
+            <div class="col-xs-12 col-md-6">
+              <%= f.input :price_daily, placeholder: "price per day in USD" %>
+            </div>
+
+            <div class="col-xs-12 col-md-6">
+              <%= f.input :city%>
+            </div>
+
+            <div class="col-xs-12 col-md-6">
+              <%= f.input :capacity, placeholder: "how many guest can stay" %>
+            </div>
+
+            <div class="col-xs-12 col-md-12">
+              <%= f.input :address %>
+            </div>
+            <div class="col-xs-12 col-md-12">
+              <%= f.input :headline, placeholder: "now give us a catchy headline" %>
+            </div>
+            <div class="col-xs-12 col-md-12">
+              <%= f.input :description,  as: :text, placeholder: "and a detailed description of the place", :input_html => { :rows => 5 } %>
+            </div>
+
+            <div class="text-center">
+              <%= f.submit :submit, class: "btn-primary btn-lg" %>
+            </div>
+
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <h2>Your listings</h2>
+        <div class="row">
+          <div class="notice"><%= notice %></div>
+            <div class="alert"><%= alert %></div>
+            <h2 class="header"><%= @header %></h2>
+              <% @listings.each do |listing| %>
+                <div class="col-xs-12 col-md-3">
+                    <%= render partial: "shared/listing_card", locals: { listing: listing }%>
+                </div>
+              <% end %>
+        </div>
+    </div>
+  </div>
+  <% else %>
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary" %>
+  <% end %>
+</div>
