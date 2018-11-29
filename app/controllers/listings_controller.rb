@@ -5,12 +5,12 @@ class ListingsController < ApplicationController
   def home; end
 
   def index
-    if params[:city].nil?
+    if listing_params[:city].nil?
       @listings = Listing.all
       @header = "All listings"
     else
-      @listings = Listing.where(country: params[:search][:country], city: params[:search][:city])
-      @header = "All listings in #{params[:search][:city]}, #{params[:search][:country]}"
+      @listings = Listing.where(city: listing_params[:city])
+      @header = "All listings in #{listing_params[:city]}"
     end
   end
 
@@ -19,7 +19,6 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listing = Listing.find(params[:id])
     @booking = @listing.bookings.new
   end
 
