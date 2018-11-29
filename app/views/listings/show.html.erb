@@ -1,14 +1,15 @@
 <div class="container">
   <div class="flat-view">
+    <div class="col-lg-6">
+      <h2><%= @listing.description %></h2>
 
-    <h2><%= @listing.description %></h2>
-
-    <div>
-      <p>Address: <%= @listing.address %></p>
-      <p>Daily price: <%= "$#{sprintf('%.2f', @listing.price_daily)}" %></p>
-      <p>City: <%= @listing.city %></p>
-      <p>Capacity: <%= @listing.capacity %></p>
-      <p>Host: <%= Profile.find_by(id: @listing.user_id).first_name %></p>
+      <div>
+        <p>Address: <%= @listing.address %></p>
+        <p>Daily price: <%= "$#{sprintf('%.2f', @listing.price_daily)}" %></p>
+        <p>City: <%= @listing.city %></p>
+        <p>Capacity: <%= @listing.capacity %></p>
+        <p>Host: <%= Profile.find_by(id: @listing.user_id).first_name %></p>
+      </div>
     </div>
 
     <%# Hide booking if user is not logged in %>
@@ -18,8 +19,8 @@
           <div class="listing-book">
               <%= simple_form_for :booking, url: listing_bookings_path(@listing), :method => :post do |f| %>
                 <div class="form-inline">
-                  <%= f.input :start_date, as: :date, html5: true %>
-                  <%= f.input :end_date, as: :date, html5: true %>
+                  <%= f.input :start_date, as: :date, html5: true, :input_html => { :value => params['start_date']} %>
+                  <%= f.input :end_date, as: :date, html5: true, :input_html => { :value => params['end_date']} %>
                   <%= f.input :guest_number, as: :numeric %>
                   <%= f.submit :book %>
                   <% if @booking.errors.any? %>
@@ -35,8 +36,7 @@
               <% end %>
           </div>
       <% end %>
-    <% else %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary" %>
     <% end %>
+    </div>
   </div>
 </div>
