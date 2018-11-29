@@ -2,9 +2,6 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :index, :search ]
   before_action :set_listing, only: [ :show, :edit, :update, :destroy ]
 
-  def home
-  end
-
   def index
     if params[:commit] == 'Search'
       @listings = Listing.where(country: params[:search][:country], city: params[:search][:city])

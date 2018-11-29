@@ -1,23 +1,25 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="banner">
+<div class="jumbotron">
+  <div class="container">
     <h1>Bad AirBnB</h1>
     <p>Even the worst place to stay is better than no place at all.</p>
     <%= render partial: "shared/search_form" %>
   </div>
 </div>
 
-<div class="main-container">
-  <div class="container">
-    <div class="cards-container">
-      <div class="row">
-        <div class="notice"><%= notice %></div>
-        <div class="alert"><%= alert %></div>
-        <h2 class="header"><%= @header %></h2>
-        <% @listings.each do |listing| %>
-        <%= render partial: "shared/listing_card", locals: { listing: listing }%>
-        <% end %>
+<% if @listings.length < 3 %>
+  <div class="main-container">
+    <div class="container">
+      <div class="cards-container">
+        <div class="row">
+          <div class="notice"><%= notice %></div>
+          <div class="alert"><%= alert %></div>
+          <h2 class="header"><%= @header %></h2>
+          <% @listings.each do |listing| %>
+          <%= render partial: "shared/listing_card", locals: { listing: listing }%>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
     <div id="map"></div>
-</div>
+  </div>
+<% end %>
