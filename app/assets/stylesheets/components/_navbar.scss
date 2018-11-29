@@ -13,8 +13,30 @@
   position: sticky !important;
   top: 0px !important;
   z-index: 1;
+  align-items: center;
 }
 
+.branding {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.logo-placeholder {
+  height: 35px;
+  width: 40px;
+}
+
+.pseudo-logo {
+  color: (127, 190, 235, 1);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.pseudo-logo:hover {
+  color: rgba(127, 190, 235, 0.8);
+  text-decoration: none;
+}
 
 /* User Avatar */
 .navbar-wagon .avatar {
@@ -42,7 +64,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: rgba(127, 190, 235, 1);
   text-decoration: none;
 }
 
