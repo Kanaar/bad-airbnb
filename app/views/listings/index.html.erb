@@ -4,7 +4,7 @@
       <div class="col-xs-12">
         <h1>AirBnBroke</h1>
         <p>Even the worst place to stay is better than no place at all.</p>
-        <%= render partial: "shared/search_form" %>
+        <%= render partial: "shared/search_form", locals: { search_params: @search_params } %>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
           <div class="alert"><%= alert %></div>
           <h2 class="header"><%= @header %></h2>
           <% @listings.each do |listing| %>
-          <%= render partial: "shared/listing_card", locals: { listing: listing }%>
+          <%= render partial: "shared/listing_card", locals: { listing: listing, search_params: @search_params }%>
           <% end %>
         </div>
       </div>
