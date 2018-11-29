@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
   def home; end
 
   def index
-    if listing_params[:city].nil?
+    if listing_params[:city].empty?
       @listings = Listing.all
       @header = "All listings"
     else
@@ -20,8 +20,6 @@ class ListingsController < ApplicationController
 
   def show
     @booking = @listing.bookings.new
-
-    @booking_show = true if @listing.user_id != current_user.id
   end
 
   def new
@@ -60,6 +58,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:description, :headline, :country, :city, :address, :price_daily, :capacity)
+    params.require(:listing).permit(:start_date, :end_date, :description, :headline, :country, :city, :address, :price_daily, :capacity)
   end
 end
