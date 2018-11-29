@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'listings#index'
+  root to: 'listings#home'
 
   get '/users/:user_id/listings', to: 'listings#host_index', as: 'user_listings'
   get '/users/:user_id/user_listings', to: 'listings#new', as: 'new_listing'
