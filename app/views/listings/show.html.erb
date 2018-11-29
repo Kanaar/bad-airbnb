@@ -1,7 +1,7 @@
 <div class="container">
   <div class="flat-view">
 
-      <h2><%= @listing.description %></h2>
+    <h2><%= @listing.description %></h2>
 
     <div>
       <p>Address: <%= @listing.address %></p>
@@ -11,21 +11,22 @@
       <p>Host: <%= Profile.find_by(id: @listing.user_id).first_name %></p>
     </div>
 
-<% if user_signed_in? %>
-  <div class="listing-book">
-      <%= simple_form_for :booking, url: listing_bookings_path(@listing), :method => :post do |f| %>
-        <%= f.error_notification %>
-        <div class="form-inline">
-          <%= f.input :start_date, as: :date, html5: true %>
-          <%= f.input :end_date, as: :date, html5: true %>
-          <%= f.input :guest_number, as: :numeric %>
-          <%= f.submit :book %>
+    <% if user_signed_in? %>
+      <% if @booking_show %>
+        <div class="listing-book">
+            <%= simple_form_for :booking, url: listing_bookings_path(@listing), :method => :post do |f| %>
+              <%= f.error_notification %>
+              <div class="form-inline">
+                <%= f.input :start_date, as: :date, html5: true %>
+                <%= f.input :end_date, as: :date, html5: true %>
+                <%= f.input :guest_number, as: :numeric %>
+                <%= f.submit :book %>
+              </div>
+            <% end %>
         </div>
       <% end %>
-  </div>
-<% else %>
-  <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary" %>
-<% end %>
-
+    <% else %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>

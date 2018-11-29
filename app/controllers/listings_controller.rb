@@ -21,6 +21,8 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @booking = @listing.bookings.new
+
+    @booking_show = true if @listing.user_id != current_user.id
   end
 
   def new
