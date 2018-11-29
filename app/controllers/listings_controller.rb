@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
   def home; end
 
   def index
-    if listing_params[:city].nil?
+    if listing_params[:city].empty?
       @listings = Listing.all
       @header = "All listings"
     else
