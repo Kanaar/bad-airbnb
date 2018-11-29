@@ -14,10 +14,10 @@ class BookingsController < ApplicationController
     @booking = @listing.bookings.new(booking_params)
 
     days = (@booking.end_date - @booking.start_date).to_i
-
     @booking.total_cost = days * @booking.listing.price_daily
+
     @booking.user = current_user
-    @booking.save!
+    @booking.save! unless @listing.user = @booking.user
 
     if @booking.save
       redirect_to bookings_path
