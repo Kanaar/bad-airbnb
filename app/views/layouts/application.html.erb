@@ -11,6 +11,10 @@
     <%#= stylesheet_pack_tag "application", media: "all" %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+
+    <%= stylesheet_pack_tag "map" %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+
   </head>
   <body>
     <%= render "shared/navbar" %>
@@ -31,6 +35,7 @@
     </script>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag "map" %>
   </body>
 
   <footer>

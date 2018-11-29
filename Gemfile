@@ -9,15 +9,16 @@ gem 'rails', '5.2.1'
 gem 'redis'
 
 gem 'autoprefixer-rails'
+gem 'country_select'
+gem 'devise'
+gem "geocoder"
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.0.9'
+gem 'jquery-rails'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'devise'
-gem 'country_select'
-gem 'jquery-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
