@@ -19,29 +19,28 @@
 .branding {
   display: flex;
   justify-content: space-between;
-
 }
 
-.logo-placeholder {
-  height: 35px;
-  width: 40px;
+.branding img {
+  height: 30px;
+  width: 35px;
 }
 
 .pseudo-logo {
-  color: (127, 190, 235, 1);
+  color: rgba(114, 192, 232, 1);
   font-size: 25px;
   font-weight: bold;
-  margin-left: 2px;
+  margin-left: 3px;
 }
 
 .pseudo-logo:hover {
-  color: rgba(127, 190, 235, 0.8);
+  color: rgba(114, 192, 232, 0.8);
   text-decoration: none;
 }
 
 
 /* User Avatar */
-.navbar-wagon img {
+.avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -66,7 +65,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: rgba(127, 190, 235, 1);
+  color: rgba(114, 192, 232, 0.8);
   text-decoration: none;
 }
 

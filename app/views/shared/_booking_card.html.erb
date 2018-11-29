@@ -8,16 +8,21 @@
             <p>To: <%= booking.end_date %></p>
           </div>
           <p>Guests: <%= booking.guest_number %></p>
-          <h2>Total price: <%= booking.total_cost %> USD</h2>
+          <h2 class="price">Total price: <%= booking.total_cost %> USD</h2>
         </div>
         <div class="bookings-host-details">
-          <h2>Hosted by:</h2>
-          <%= image_tag "justin_holt.jpg", class: "card-user avatar avatar-large" %>
+          <h2 class="host">Hosted by:</h2>
+          <%= image_tag "justin_holt.jpg", class: "avatar-booking" %>
           <p><%= booking.listing.user.email %></p>
         </div>
       </div>
     <div class="card-footer">
-      <p>If you have questions regarding your booking please send a message to noreply@bad-aibnb.com</p>
+      <div>
+       <%= image_tag "CS-avatar.png", class: "customer-service-avatar"%>
+       </div>
+      <div>
+      <p>"If you have questions regarding your booking please send a message to noreply@airbnbroke.com"</p>
+      </div>
     </div>
   </div>
 </div>
