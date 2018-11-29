@@ -15,7 +15,7 @@ class ListingsController < ApplicationController
   end
 
   def my_listings
-    @listings = Listing.where(user: current_user)
+    @listings = Listing.where(user: current_user).order(updated_at: :desc)
   end
 
   def show
