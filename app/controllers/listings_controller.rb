@@ -14,12 +14,13 @@ class ListingsController < ApplicationController
     end
   end
 
-  def host_index
+  def my_listings
     @listings = Listing.where(user: current_user)
   end
 
   def show
     @listing = Listing.find(params[:id])
+    @booking = @listing.bookings.new
   end
 
   def new
@@ -32,7 +33,7 @@ class ListingsController < ApplicationController
     @listing.save!
 
     if @listing.save
-      redirect_to user_listings_path
+      redirect_to my_listings_path
     else
       render :new
     end
