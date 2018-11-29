@@ -10,17 +10,24 @@
       <p>Capacity: <%= @listing.capacity %></p>
       <p>Host: <%= Profile.find_by(id: @listing.user_id).first_name %></p>
     </div>
-
     <% if user_signed_in? %>
-      <% if @booking_show %>
+      <% if current_user.id != @listing.user_id  %>
         <div class="listing-book">
             <%= simple_form_for :booking, url: listing_bookings_path(@listing), :method => :post do |f| %>
-              <%= f.error_notification %>
               <div class="form-inline">
                 <%= f.input :start_date, as: :date, html5: true %>
                 <%= f.input :end_date, as: :date, html5: true %>
                 <%= f.input :guest_number, as: :numeric %>
                 <%= f.submit :book %>
+                <% if @booking.errors.any? %>
+                   <div class="errors-container">
+                     <ul>
+                       <% @booking.errors.full_messages.each do |message| %>
+                         <li><%= message %></li>
+                       <% end %>
+                     </ul>
+                   </div>
+                 <% end %>
               </div>
             <% end %>
         </div>
