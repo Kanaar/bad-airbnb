@@ -6,11 +6,19 @@ class ListingsController < ApplicationController
 
   def index
     if listing_params[:city].empty?
-      @listings = Listing.all
+      @listings = Listing.where.not(latitude: nil, longitude: nil)
       @header = "All listings"
     else
-      @listings = Listing.where(city: listing_params[:city])
+      @listings = Listing.where(city: listing_params[:city]).where.not(latitude: nil, longitude: nil)
       @header = "All listings in #{listing_params[:city]}"
+    end
+
+    @markers = @listings.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude,
+        infoWindow: { content: render_to_string(partial: "/listings/map_window", locals: { listing: listing }) }
+      }
     end
   end
 
