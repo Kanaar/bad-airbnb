@@ -8,8 +8,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", user_listings_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", user_bookings_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Host", my_listings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Trips", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
