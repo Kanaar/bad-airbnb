@@ -86,7 +86,8 @@
 //// booking_card
 
 .booking-card {
-  background-image: none;
+  background-image: linear-gradient(-225deg, rgba(255,255,255,0.7) 20%, rgba(245,245,245,0.2) 100%), url("https://bloximages.chicago2.vip.townnews.com/nogalesinternational.com/content/tncms/assets/v3/editorial/4/e5/4e5fa2c4-45a6-11e4-bd38-53524b3248c4/53d56e7978716.image.jpg");
+  background-size: cover;
   background-color: white;
   box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   width: 1200px;
@@ -138,6 +139,3 @@
   margin-right: 92rem;
 }
 
-.booking-button {
-  margin-left: 45px;
-}
