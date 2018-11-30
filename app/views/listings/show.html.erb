@@ -6,7 +6,7 @@
   </div>
 
     <div class="listing-view__detail">
-      <div class="col-lg-6">
+      <div class="col-sm-12">
         <h2><%= @listing.headline %></h2>
         <div>
           <p>Description: <%= @listing.description %></p>
@@ -26,7 +26,7 @@
           <% end %>
       </div>
     </div>
-  
+
       <%# Hide booking if user is not logged in %>
       <%# or user is listing's host             %>
   <% if user_signed_in? %>
@@ -38,17 +38,17 @@
         <div class="col-lg-6">
           <%= f.input :start_date, as: :date, html5: true, :input_html => { :value => params['start_date']} %>
         </div>
-        
+
         <div class="col-lg-6">
           <%= f.input :end_date, as: :date, html5: true, :input_html => { :value => params['end_date']} %>
         </div>
-        
+
         <div class="listing-view__form-guest-number">
           <div class="col-lg-6">
             <%= f.input :guest_number, label: :Guests, as: :numeric %>
           </div>
         </div>
-        
+
           <div class="col-lg-5 text-center">
             <%= f.submit :book, class: "btn btn-lg btn-primary listing_view__form-button"%>
           </div>

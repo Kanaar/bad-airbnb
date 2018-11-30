@@ -69,7 +69,7 @@
   padding: 10px;
 }
 .card-footer p {
-  color: white;
+  color: black;
   font-weight: 700;
   font-style: italic;
   font-size: 18px;
@@ -90,12 +90,11 @@
 //// booking_card
 
 .booking-card {
-  background-image: linear-gradient(-225deg, rgba(255,255,255,0.7) 20%, rgba(245,245,245,0.2) 100%), url("https://bloximages.chicago2.vip.townnews.com/nogalesinternational.com/content/tncms/assets/v3/editorial/4/e5/4e5fa2c4-45a6-11e4-bd38-53524b3248c4/53d56e7978716.image.jpg");
-  background-size: cover;
+  background-size: cover !important;
   background-color: white;
   box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  width: 1200px;
-  height: 320px;
+  width: 100%;
+  height: 100vh;
   padding: 16px;
   border-radius: 10px;
   border-radius: 25px;
@@ -103,7 +102,7 @@
 }
 
 .booking-card-body {
-  color: black;
+  color: ivory;
   height: 180px;
   position: relative;
 
@@ -118,7 +117,7 @@
   margin-top: 25px;
 
   .booking-card-footer p {
-    color: black;
+    color: ivory;
     font-weight: 700;
     font-style: italic;
     font-size: 18px;
