@@ -6,4 +6,13 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_one :profile, dependent: :destroy
+  after_create :init_profile
+
+  delegate :image_url, to: :profile
+
+  def init_profile
+    Profile.create(user: self)
+  end
 end
