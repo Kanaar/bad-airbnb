@@ -31,16 +31,16 @@
       <div class="listing-view__dates-form">
           <%= simple_form_for :booking, url: listing_bookings_path(@listing), :method => :post do |f| %>
 
-        <div class="col-lg-5">
+        <div class="col-lg-6">
           <%= f.input :start_date, as: :date, html5: true, :input_html => { :value => params['start_date']} %>
         </div>
         
-        <div class="col-lg-5">
+        <div class="col-lg-6">
           <%= f.input :end_date, as: :date, html5: true, :input_html => { :value => params['end_date']} %>
         </div>
         
         <div class="listing-view__form-guest-number">
-          <div class="col-lg-5">
+          <div class="col-lg-6">
             <%= f.input :guest_number, label: :Guests, as: :numeric %>
           </div>
         </div>
