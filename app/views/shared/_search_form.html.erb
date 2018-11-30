@@ -5,7 +5,7 @@
         <%= simple_form_for :listing, url: listings_path, :method => :get do |f| %>
           <%= f.error_notification %>
 
-          <%= f.input :city %>
+          <%= f.input :city, placeholder: "City", label: false %>
           <div class="form-inline">
             <% if (defined?(search_params) == nil) %>
               <%= f.input :start_date, as: :date, html5: true %>

@@ -1,8 +1,9 @@
 .search-box {
-  background-color: rgba($color: #181818, $alpha: 0.45);
+  background-color: rgba($color: $black, $alpha: 0.45);
   padding: 2rem 8rem;
   border-radius: 1%;
   color: white;
+  vertical-align: middle !important;
 
   &__button {
     margin-top: 3rem;
@@ -10,7 +11,7 @@
 }
 
 .listing-form {
-  background-color: rgba($color: $light-blue, $alpha: 0.9);
+  background-color: rgba($color: $soft-blue, $alpha: 0.9);
   border: 6px solid $cyan;
 
   font-family: 'Quicksand', sans-serif;
