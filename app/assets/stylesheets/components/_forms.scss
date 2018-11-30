@@ -10,10 +10,62 @@
 }
 
 .listing-form {
-  background-color: rgba($color: #181818, $alpha: 0.45);
+  background-color: rgba($color: $light-blue, $alpha: 0.9);
+  border: 6px solid $cyan;
+
+  font-family: 'Quicksand', sans-serif;
+  font-weight: lighter;
+  letter-spacing: 2px;
+
   padding: 2rem 8rem;
   margin: 0 20rem;
   margin-top: 5rem;
   border-radius: 1%;
   color: white;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;}
+
+.fg-left{
+
+}
+
+.fg-right{
+  .ff { float: right; }
+}
+
+.ff {
+  font-family: 'Quicksand', sans-serif;
+  font-color: black;
+  display: block;
+
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+  -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+  box-sizing: border-box;
+}
+
+.ff-label {
+  padding-right: 6px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.ff-small{
+  width : 80px;
+  margin: 0;
+}
+
+.ff-mid {
+  width : 240px;
+  margin: 0;
+}
+
+.ff-large {
+  margin: 0;
+}
+
+.ff-box {
+  height: 120px !important;;
+  margin: 0;
 }

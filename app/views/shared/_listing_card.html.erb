@@ -1,19 +1,23 @@
-  <div class="card">
-    <div class="card-body">
-      <span class="card-category"><%= listing.city %></span>
-      <div class="card-description">
-      <h2> <%= listing.headline %></h2>
-      <p><%= listing.description %></p>
+<div class="col-xs-12 col-sm-6">
+  <%= link_to listing_path(listing, search_params) do %>
+    <div class="card">
+      <div class="card-body", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= listing.image_url %>);">
+        <span class="card-category"><%= listing.city %></span>
+        <div class="card-description">
+        <h2> <%= listing.headline %></h2>
+        <p><%= listing.description.split(/\.\s/)[0] + "." %></p>
+        </div>
+          <%= image_tag listing.user.image_url, class: "card-user avatar-large" %>
       </div>
-      <%= image_tag "justin_holt.jpg", class: "card-user avatar avatar-large" %>
-      <%= link_to listing_path(listing, search_params), :class => "card-link" do %><div></div><% end %>
-    </div>
-    <div class="card-footer">
-      <p>$<%= listing.price_daily %></p>
-      <div class="controls">
-        <a href="#"><i class="fa fa-star"></i></a></li>
-        <a href="#"><i class="fa fa-heart"></i></a></li>
-        <a href="#"><i class="fa fa-share"></i></a></li>
+      <div class="card-footer">
+        <p>$<%= listing.price_daily %></p>
+        <div class="controls">
+          <a href="#"><i class="fa fa-star"></i></a>
+          <a href="#"><i class="fa fa-heart"></i></a>
+          <a href="#"><i class="fa fa-share"></i></a>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
+</div>
+

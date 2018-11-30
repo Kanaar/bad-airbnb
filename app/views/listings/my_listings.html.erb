@@ -8,38 +8,66 @@
           <%= simple_form_for :listing, url: listings_path, :method => :post do |f| %>
             <%= f.error_notification %>
 
-            <div class="col-xs-12 col-md-6">
-              <%= f.input :country%>
-            </div>
+            <div class="form-group">
+              <div class="fg-left">
+                <%= f.input :country,
+                            input_html: {class: "ff ff-mid"},
+                            prompt: "Country",
+                            label: false,
+                            required: true %>
 
-            <div class="col-xs-12 col-md-6">
-              <%= f.input :price_daily, placeholder: "price per day in USD" %>
-            </div>
+                <%= f.input :city,
+                            input_html: {class: "ff ff-mid"},
+                            placeholder: "City",
+                            label: false,
+                            required: true %>
+              </div>
+              <div class="fg-right">
+                <%= f.input :price_daily,
+                            input_html: {class: "ff ff-small"},
+                            label: "$ per night",
+                            label_html: {class: "ff-label"},
+                            required: true %>
 
-            <div class="col-xs-12 col-md-6">
-              <%= f.input :city%>
+                <%= f.input :capacity,
+                            input_html: {class: "ff ff-small"},
+                            selected: "1",
+                            label: "Guests",
+                            label_html: {class: "ff-label"},
+                            required: true %>
+              </div>
             </div>
+                <%= f.input :address,
+                             input_html: {class: "ff ff-large"},
+                             placeholder: "Address",
+                             label: false,
+                             required: true %>
 
-            <div class="col-xs-12 col-md-6">
-              <%= f.input :capacity, placeholder: "how many guest can stay" %>
-            </div>
+                <%= f.input :headline,
+                            input_html: {class: "ff ff-large"},
+                            placeholder: "Promote your place with a catchy headline",
+                            label: false,
+                            required: true %>
 
-            <div class="col-xs-12 col-md-12">
-              <%= f.input :address %>
-            </div>
-            <div class="col-xs-12 col-md-12">
-              <%= f.input :headline, placeholder: "now give us a catchy headline" %>
-            </div>
-            <div class="col-xs-12 col-md-12">
-              <%= f.input :description,  as: :text, placeholder: "and a detailed description of the place", :input_html => { :rows => 5 } %>
-            </div>
+                <%= f.input :description,
+                            input_html: {class: "ff ff-box"},
+                            as: :text,
+                            placeholder: "Describe your place here...",
+                            label: false,
+                            required: true %>
 
-            <div class="text-center">
-              <%= f.submit :submit, class: "btn-primary btn-lg" %>
-            </div>
-
+                <%= f.button :button, class: "blob-btn" do %>
+                   Post listing
+                   <span class="blob-btn__inner">
+                     <span class="blob-btn__blobs">
+                       <span class="blob-btn__blob"></span>
+                       <span class="blob-btn__blob"></span>
+                       <span class="blob-btn__blob"></span>
+                       <span class="blob-btn__blob"></span>
+                     </span>
+                   </span>
+                <% end %>
           <% end %>
-
         </div>
       </div>
     </div>
