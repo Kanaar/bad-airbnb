@@ -61,21 +61,24 @@
   opacity: 0.1;
 }
 .card-footer {
-  background-color: ivory;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
 }
 .card-footer p {
-  color: rgba(0,0,0,0.4);
-  font-weight: lighter;
-  font-size: 12px;
+  color: white;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 18px;
+  margin-left: 8px;
 }
+
 .card-footer .controls {
   display: flex;
   align-items: center;
 }
+
 .card-footer .controls i {
   padding: 0 10px;
   color: red;
@@ -86,23 +89,17 @@
 
 .booking-card {
   background-image: none;
-  background: gray;
+  background-color: rgba(114, 192, 232, 1);
+  box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   width: 1200px;
   height: 300px;
   padding: 16px;
-
-  h3 { text-decoration: underline; }
-
-  .card-description {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .card-footer {
-    background-color: gray;
-    display: block;
-  }
 }
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+  }
 
 .bookings-host-details {
   position: absolute;
@@ -115,3 +112,9 @@
 }
 
 .date-range { display: inline; }
+
+.price {
+  border-top: solid white 5px;
+  margin-right: 93rem;
+}
+

@@ -6,4 +6,7 @@ class Listing < ApplicationRecord
   validates :country, :city, :address, presence: true
   validates :price_daily, presence: true, numericality: { greater_than: 0 }
   validates :capacity, presence: true, numericality: { greater_than: 0 }
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
