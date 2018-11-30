@@ -3,7 +3,8 @@ var endDate = new Date(document.getElementById("booking_end_date").value);
 var startDate = new Date(document.getElementById("booking_start_date").value);
 var setDate = 0;
 var pageDate = document.querySelector(".listing-view__total-price");
-var price = parseInt(getSecondPart(document.querySelector("#price").innerHTML));
+var price =
+  parseInt(getSecondPart(document.querySelector("#price").innerHTML)) || 0;
 
 document
   .getElementById("booking_end_date")
@@ -25,7 +26,7 @@ diffDays = () => {
   setDate = Math.round(
     Math.abs((endDate.getTime() - startDate.getTime()) / oneDay)
   );
-  pageDate.innerHTML = setDate * price;
+  pageDate.innerHTML = setDate * price || 0;
 };
 
 diffDays();
