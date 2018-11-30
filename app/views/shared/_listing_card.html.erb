@@ -1,5 +1,5 @@
 <div class="col-xs-12 col-sm-6">
-  <%= link_to listing_path(listing) do %>
+  <%= link_to listing_path(listing, search_params) do %>
     <div class="card">
       <div class="card-body", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= listing.image_url %>);">
         <span class="card-category"><%= listing.city %></span>

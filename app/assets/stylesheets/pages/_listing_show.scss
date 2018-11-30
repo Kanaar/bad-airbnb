@@ -1,4 +1,23 @@
-.flat-view {
+.listing-view {
   height: 75vh;
   margin-top: 5rem;
+}
+
+.listing-view__detail {
+}
+
+.listing-view__dates-form {
+  margin: 10rem 0 0 5rem;
+  background-color: rgba($color: #181818, $alpha: 0.3);
+  border-radius: 1%;
+  height: 21rem;
+  padding: 2.5rem 0 0 5rem;
+}
+
+.listing-view__form-guest-number {
+}
+
+.listing_view__form-button {
+  margin: 3.4rem 2rem 0 2rem;
+  padding: 0 5rem;
 }
