@@ -6,7 +6,17 @@
   text-align: center;
   padding-top: 0;
   padding-bottom: 0;
+  height: 90vh !important;
+  text-align: center;
+  vertical-align: middle !important;
 }
+
+.jumbotron .container {
+  display: inline-block;
+  margin-top: 80px;
+  vertical-align: middle !important;
+}
+
 .banner h1 {
   font-size: 55px;
   font-weight: bold;
