@@ -1,6 +1,10 @@
 <div class="container">
   <div class="listing-view">
 
+  <div class="row">
+    <div class="listing-view__bg" style="background-image: url(<%= @listing.image_url %>);"></div>
+  </div>
+
     <div class="listing-view__detail">
       <div class="col-lg-6">
         <h2><%= @listing.headline %></h2>
@@ -22,7 +26,7 @@
           <% end %>
       </div>
     </div>
-
+  
       <%# Hide booking if user is not logged in %>
       <%# or user is listing's host             %>
   <% if user_signed_in? %>

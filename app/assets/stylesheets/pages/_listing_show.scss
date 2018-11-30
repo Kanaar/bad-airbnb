@@ -23,3 +23,13 @@
   padding: 0 5rem;
   margin-left: 11rem;
 }
+
+.listing-view__bg {
+  /* Full height */
+  height: 25vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
