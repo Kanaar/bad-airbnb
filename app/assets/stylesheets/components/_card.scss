@@ -1,20 +1,18 @@
 /* Your card CSS code here */
 .card {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), image-url("airplane.jpg");
-  background-size: cover !important;
-  background-position: center;
   flex: 1 1 auto;
   margin: 10px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
+  // transition: all 0.3s ease;
 }
 .card:hover {
-  margin-top: -5px;
+  transform: translateY(-5px);
 }
 .card-body {
   height: 180px;
-  background-size: cover;
+  background-size: cover !important;
+  background-position: center;
   color: white;
   position: relative;
 }
@@ -97,9 +95,9 @@
 }
 
 .card-footer {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: center;
+}
 
 .bookings-host-details {
   position: absolute;
