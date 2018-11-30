@@ -86,18 +86,41 @@
 //// booking_card
 
 .booking-card {
-  background-image: none;
-  background-color: rgba(114, 192, 232, 1);
+  background-image: linear-gradient(-225deg, rgba(255,255,255,0.7) 20%, rgba(245,245,245,0.2) 100%), url("https://bloximages.chicago2.vip.townnews.com/nogalesinternational.com/content/tncms/assets/v3/editorial/4/e5/4e5fa2c4-45a6-11e4-bd38-53524b3248c4/53d56e7978716.image.jpg");
+  background-size: cover;
+  background-color: white;
   box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   width: 1200px;
-  height: 300px;
+  height: 320px;
   padding: 16px;
+  border-radius: 10px;
+  border-radius: 25px;
+  border: 2px solid black;
 }
 
-.card-footer {
+.booking-card-body {
+  color: black;
+  height: 180px;
+  position: relative;
+
+  .booking-main-details {
+
+  }
+}
+
+.booking-card-footer {
   display: flex;
   justify-content: center;
-}
+  margin-top: 25px;
+
+  .booking-card-footer p {
+    color: black;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 18px;
+    margin-left: 8px;
+    }
+  }
 
 .bookings-host-details {
   position: absolute;
@@ -112,7 +135,7 @@
 .date-range { display: inline; }
 
 .price {
-  border-top: solid white 5px;
-  margin-right: 93rem;
+  border-top: solid black 5px;
+  margin-right: 92rem;
 }
 
