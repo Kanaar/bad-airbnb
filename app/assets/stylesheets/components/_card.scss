@@ -3,7 +3,11 @@
   flex: 1 1 auto;
   margin: 10px;
   border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba($color: $black, $alpha: 0.3);
+
+  font-family: 'Quicksand', sans-serif;
+  font-weight: lighter;
+  letter-spacing: 2px;
   // transition: all 0.3s ease;
 }
 .card:hover {

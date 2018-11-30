@@ -42,7 +42,7 @@ class ListingsController < ApplicationController
     if @listing.save
       redirect_to my_listings_path
     else
-      render :new
+      redirect_to my_listings_path
     end
   end
 
